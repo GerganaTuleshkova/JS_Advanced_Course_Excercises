@@ -2,6 +2,7 @@ function aggregate(array) {
     let sumOfElements = 0;
     let sumOfInverse = 0;
     let concatElements = '';
+    
     for (let el of array) {
         sumOfElements += el;
         sumOfInverse += 1/el;
