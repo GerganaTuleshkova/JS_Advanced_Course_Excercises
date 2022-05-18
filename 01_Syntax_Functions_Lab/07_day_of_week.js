@@ -1,7 +1,7 @@
 function dayOfWeek(day) {
     if (day === 'Monday') {
         console.log(1);
-    } else if (day == 'Tusday') {
+    } else if (day == 'Tuesday') {
         console.log(2);
     } else if (day == 'Wednesday') {
         console.log(3);
