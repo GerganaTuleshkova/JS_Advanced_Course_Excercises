@@ -1,6 +1,5 @@
 function calculateArea(radius) {
     let typeOfRadius = typeof radius;
-    console.log(typeOfRadius);
     if (typeOfRadius == 'number') {
         let area = radius ** 2 * Math.PI;
         console.log(area.toFixed(2));
