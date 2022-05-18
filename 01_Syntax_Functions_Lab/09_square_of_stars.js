@@ -5,11 +5,10 @@ function drawSwareOfStars(rows) {
         }
     } else {
         for (let i = 0; i < rows; i++) {
-            console.log('*'.repeat(rows));
+            console.log('* '.repeat(rows));
         }
     }
 }
-
 
 drawSwareOfStars(1);
 drawSwareOfStars()
