@@ -1,11 +1,16 @@
 function previousDay(year, month, day) {
-    let today = new Date(year, month - 1, day);
-    let previousObj = new Date(today.getTime());
-    previousObj.setDate(today.getDate() - 1);
+    let givenDate = new Date(year, month - 1, day);
+    // let previousObj = new Date(givenDate.getTime());
+    // previousObj.setDate(givenDate.getDate() - 1);
+    // let previousDateDay = previousObj.getUTCDate() + 1;
+    // let previousDateMonth = previousObj.getUTCMonth() + 1;
+    // let previousDateYear = previousObj.getUTCFullYear();
 
-    let previousDateDay = previousObj.getUTCDate() + 1;
-    let previousDateMonth = previousObj.getUTCMonth() + 1;
-    let previousDateYear = previousObj.getUTCFullYear();
+    givenDate.setDate(givenDate.getDate() - 1);
+
+    let previousDateDay = givenDate.getDate();
+    let previousDateMonth = givenDate.getMonth() + 1;
+    let previousDateYear = givenDate.getFullYear();
 
     console.log(`${previousDateYear}-${previousDateMonth}-${previousDateDay}`);
 }
