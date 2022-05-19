@@ -1,10 +1,11 @@
 function hasSameNumbers(number) {
     let numberAsString = number.toString();
-    let digit = numberAsString[0];
+    let firstDigit = numberAsString[0];
     let result = true;
     let sum = Number(numberAsString[0]);
-    for (ch of numberAsString.slice(1)) {
-        if (ch != digit) {
+    
+    for (let ch of numberAsString.slice(1)) {
+        if (ch != firstDigit) {
             result = false;
         }
         sum += Number(ch);
