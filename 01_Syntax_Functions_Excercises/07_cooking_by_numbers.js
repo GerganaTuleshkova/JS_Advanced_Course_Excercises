@@ -1,5 +1,5 @@
-function cookingByNumbers(number, operation1, operation2, operation3, operation4, operation5) {
-    let result = number;
+function cookingByNumbers(numberAsStr, operation1, operation2, operation3, operation4, operation5) {
+    let result = Number(numberAsStr);
 
     let operations = [operation1, operation2, operation3, operation4, operation5];
 
