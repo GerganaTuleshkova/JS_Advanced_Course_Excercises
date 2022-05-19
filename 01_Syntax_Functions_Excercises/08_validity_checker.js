@@ -2,7 +2,7 @@ function validityChecker(x1, y1, x2, y2) {
     function check(x1, y1, x2, y2) {
         let result = Math.sqrt( (x2 - x1) ** 2 + (y2 - y1) ** 2);
         let status = 'valid';
-        console.log(result);
+        
         if ((result * 100) % 100 != 0) {
             status = 'invalid';
         }
