@@ -6,7 +6,7 @@ function validityChecker(x1, y1, x2, y2) {
         if ((result * 100) % 100 != 0) {
             status = 'invalid';
         }
-        console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is ${status}`)
+        console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is ${status}`);
     }
 
     check(x1, y1, 0, 0);
