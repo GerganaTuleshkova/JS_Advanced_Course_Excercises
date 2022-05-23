@@ -1,8 +1,8 @@
 function biggerHalf(array) {
     const sortedArray = array.sort((a, b) => a- b);
     const start = Math.floor(sortedArray.length/2);
-    const result = sortedArray.slice(start)
-    console.log(result);
+    const result = sortedArray.slice(start);
+    return result;
 }
 
 biggerHalf([3, 19, 14, 7, 2, 19, 6]);
