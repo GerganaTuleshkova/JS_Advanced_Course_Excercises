@@ -3,7 +3,7 @@ function pieceOfPie(pies, startPie, endPie) {
     const endIndex = pies.indexOf(endPie) + 1;
     const result = pies.slice(startIndex, endIndex);
 
-    console.log(result)
+    return result;
 }
 
 pieceOfPie(['Pumpkin Pie',
@@ -13,4 +13,4 @@ pieceOfPie(['Pumpkin Pie',
 'Sugar Cream Pie'],
 'Key Lime Pie',
 'Lemon Meringue Pie'
-)
+);
