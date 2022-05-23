@@ -1,5 +1,5 @@
 function sumFirtsAndLast(array) {
-    let sum = Number(array.shift()) + Number(array.pop());
+    const sum = Number(array.shift()) + Number(array.pop());
     console.log(sum);
 }
 
