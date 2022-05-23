@@ -1,5 +1,5 @@
 function negativePositive(array) {
-    let orderredArray = [];
+    const orderredArray = [];
     for (let n of array) {
         if (n >= 0) {
             orderredArray.push(n);
