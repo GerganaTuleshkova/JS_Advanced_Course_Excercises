@@ -3,9 +3,9 @@ function diagonalSums(matrix) {
     let secondaryDiagonalSum = 0;
     for (let rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
         mainDiagonalSum += matrix[rowIndex][rowIndex];
-        secondaryDiagonalSum += matrix[rowIndex][matrix.length - 1 - rowIndex]
+        secondaryDiagonalSum += matrix[rowIndex][matrix.length - 1 - rowIndex];
     }
-    console.log(mainDiagonalSum, secondaryDiagonalSum)
+    console.log(mainDiagonalSum, secondaryDiagonalSum);
 }
 
 diagonalSums([[20, 40],[10, 60]])
