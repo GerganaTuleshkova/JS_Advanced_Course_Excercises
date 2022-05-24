@@ -1,6 +1,7 @@
 function equalNeighbors(matrix) {
     let count = 0;
     const row_length = matrix[0].length;
+    // check the number to the right
     for (let rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
         for (let colIndex = 0; colIndex < row_length - 1; colIndex++) {
             if (matrix[rowIndex][colIndex] === matrix[rowIndex][colIndex + 1]) {
@@ -8,7 +9,8 @@ function equalNeighbors(matrix) {
             }
         }
     }
-    for (let rowIndex = 0; rowIndex < matrix.length -1; rowIndex++) {
+    // check the number below   
+    for (let rowIndex = 0; rowIndex < matrix.length - 1; rowIndex++) {
         for (let colIndex = 0; colIndex < row_length; colIndex++) {
             if (matrix[rowIndex][colIndex] === matrix[rowIndex + 1][colIndex]) {
                 count += 1;
