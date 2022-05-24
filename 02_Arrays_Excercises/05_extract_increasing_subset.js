@@ -8,7 +8,7 @@ function extractIncreasingSubset(array) {
         }
     }
 
-    console.log(result);
+    return result;
 }
 
 extractIncreasingSubset([1, 
