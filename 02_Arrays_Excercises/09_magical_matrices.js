@@ -3,6 +3,7 @@ function isMagical(matrix) {
     let sum = matrix[0].reduce((a, b) => a + b, 0);
     for (let row of matrix) {
         let currentRowSum = row.reduce((a, b) => a + b, 0);
+        
         if (currentRowSum !== sum) {
             result = false;
             return result;
@@ -26,6 +27,5 @@ function isMagical(matrix) {
 
 console.log(isMagical([[11, 32, 45],
     [21, 0, 1],
-    [21, 1, 1]]
-   
+    [21, 1, 1]]  
    ))
