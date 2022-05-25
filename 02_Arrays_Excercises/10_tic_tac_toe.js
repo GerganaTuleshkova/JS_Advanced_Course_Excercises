@@ -6,9 +6,10 @@ function ticTacTow(moves) {
     ]
 
     function isSpotAvailable(r, c, matrix) {
-        if (matrix[r][c] != false) {
+        if (matrix[r][c] === false) {
             return true;
         }
+        return false;
     }  
 
     function checkIfWon(r, c, player, matrix) {
@@ -70,7 +71,7 @@ function ticTacTow(moves) {
     }
 
     let currentPlayer = 'X';
-    let nextPlayer = '0'
+    let nextPlayer = 'O'
 
     // play
     for (let move of moves) {
@@ -78,7 +79,8 @@ function ticTacTow(moves) {
         let [r, c] = move.split(' ')
         
         // check if spot is available, if not go to next itteration without swapping the players
-        if (isSpotAvailable(r, c, matrix) == false) {
+        let spotIsAvailable = isSpotAvailable(r, c, matrix);
+        if (spotIsAvailable == false) {
             console.log('This place is already taken. Please choose another!');
             continue;
         }
@@ -107,14 +109,15 @@ function ticTacTow(moves) {
     printMatrix(matrix)
 }
 
-ticTacTow(["0 1",
-"0 0",
-"0 2",
-"2 0",
-"1 0",
-"1 2",
-"1 1",
-"2 1",
-"2 2",
-"0 0"]
+ticTacTow(
+    ["0 0",
+    "0 0",
+    "1 1",
+    "0 1",
+    "1 2",
+    "0 2",
+    "2 2",
+    "1 2",
+    "2 2",
+    "2 1"]
 );
