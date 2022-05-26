@@ -74,11 +74,9 @@ function spiralMatrix(width, height) {
         if (matrix[r][c] !== 0) {
             break;
         }
-
-
     }
 
-    printMatrix(matrix)
+    printMatrix(matrix);
 }
 
 spiralMatrix(5, 5);

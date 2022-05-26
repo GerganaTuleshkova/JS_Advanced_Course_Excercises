@@ -9,7 +9,7 @@ function drawOrbit(inputArray) {
         }
     }
 
-    //create the matrix
+    //create the matrix with 0s
     let matrix = [];
     for (let r = 0; r < height; r++) {
         matrix.push([]);
@@ -25,12 +25,12 @@ function drawOrbit(inputArray) {
     // fill the orbits
     for (let oR = 0; oR < height; oR++) {
         for (let oC = 0; oC < width; oC++) {
-            let difference = Math.max(Math.abs(oC - starColumn), Math.abs(oR - starRow))
+            let difference = Math.max(Math.abs(oC - starColumn), Math.abs(oR - starRow));
             matrix[oR][oC] = starMark + difference;
         }
     }
-
-    printMatrix(matrix)
+    //print the matrix
+    printMatrix(matrix);
 }
 
 drawOrbit([5, 6, 2, 2]);
