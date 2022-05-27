@@ -1,6 +1,7 @@
 function modify(worker) {
-    let requiredAmountWaterMl = 0.1
-    if (worker.dizziness == true) {
+    let requiredAmountWaterMl = 0.1;
+
+    if (worker.dizziness) {
         worker.levelOfHydrated += requiredAmountWaterMl * worker.weight * worker.experience;
         worker.dizziness = false;
     }
