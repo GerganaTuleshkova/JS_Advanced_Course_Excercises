@@ -7,10 +7,10 @@ function findLowestPrices(arrOfStrings) {
 
         if (productPrices[product]) {
             if (price < productPrices[product].price) {
-                productPrices[product] = {price: price, town: town};
+                productPrices[product] = {price, town}; // same as {price: price, town: town}
             }
         } else {
-            productPrices[product] = {price: price, town: town};
+            productPrices[product] = {price, town};
         }
     }
 
@@ -26,4 +26,4 @@ findLowestPrices(['Sample Town | Sample Product | 1000',
 'Sofia | Peach | 2',
 'New York | Sample Product | 1000.1',
 'New York | Burger | 10']
-)
+);

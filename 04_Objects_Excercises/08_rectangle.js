@@ -1,14 +1,13 @@
-function rectangle(width, height, color){
+function rectangle(width, height, color) {
     const rect = {
         width,
         height,
         color: color[0].toUpperCase() + color.slice(1).toLowerCase(),
         calcArea() {
-            return width * height
+            return width * height;
         }
     }
-
-    return rect
+    return rect;
 }
 
 let rect = rectangle(4, 5, 'red');
