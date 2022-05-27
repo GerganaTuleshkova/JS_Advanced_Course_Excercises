@@ -13,7 +13,27 @@ function createAssemblyLine() {
             }
         },
 
-        hasAudio: (car) => {
+        // another way to write the method:
+        // hasAudio: (car) => {
+        //     car.currentTrack = null;
+        //     car.nowPlaying = () => {
+        //         if (car.currentTrack != null) {
+        //             console.log(`Now playing '${car.currentTrack.name}' by ${car.currentTrack.artist}`);
+        //         }
+        //     }
+        // },
+
+        // short syntax
+        // hasAudio(car) {
+        //     car.currentTrack = null;
+        //     car.nowPlaying = () => {
+        //         if (car.currentTrack != null) {
+        //             console.log(`Now playing '${car.currentTrack.name}' by ${car.currentTrack.artist}`);
+        //         }
+        //     }
+        // },
+
+        hasAudio: function (car) {
             car.currentTrack = null;
             car.nowPlaying = () => {
                 if (car.currentTrack != null) {
@@ -21,6 +41,7 @@ function createAssemblyLine() {
                 }
             }
         },
+
 
         hasParktronic: (car) => {
             car.checkDistance = (distance) => {
@@ -38,35 +59,7 @@ function createAssemblyLine() {
     };
 
     return decorators;
-    // decorators[hasClima] = hasClima()
-
-    // function hasAudio(car) {
-    //     car.currentTrack = null;
-    //     car.nowPlaying = () => {
-    //         if (car.currentTrack != null) {
-    //             console.log(`Now playing '${car.currentTrack.name}' by ${car.currentTrack.artist}`);
-    //         }
-    //     }
-    // }
-
-    // decorators[hasAudio] = hasAudio()
-
-    // function hasParktronic(car) {
-    //     car.checkDistance = (distance) => {
-    //         if (distance <= 0.5 || distance >= 0.1) {
-    //             console.log('');
-    //         } else if (distance <= 0.1) {
-    //             console.log('Beep! Beep! Beep!');
-    //         } else if (distance <= 0.25) {
-    //             console.log('Beep! Beep!');
-    //         } else if (distance <= 0.5) {
-    //             console.log('Beep!');
-    //         }
-    //     }
-    // }
-
-    // decorators[hasParktronic] = hasParktronic()
-
+    
 }
 
 const assemblyLine = createAssemblyLine();
