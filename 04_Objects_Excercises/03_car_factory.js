@@ -25,9 +25,9 @@ function carFactory(carRequirementsObject) {
     }
  
     // calculate the wheel size and add it to made car
-    let wheels = []
+    let wheels = [];
     let wheelSize = carRequirementsObject.wheelsize;
-    wheelSize = (wheelSize % 2 == 0 ? wheelSize - 1 : wheelSize)
+    wheelSize = (wheelSize % 2 == 0 ? wheelSize - 1 : wheelSize);
     for (let i = 0; i < 4; i++) {
         wheels.push(wheelSize);
     }
