@@ -1,60 +1,64 @@
-function createSortedList() {
-    const obj = new (function () {
-        this.list = [];
-        this.size = 0;
-        this.add = (element) => {
-
-            this.list.unshift(element);
-            this.list.sort((a, b) => a - b);
-            this.size++;
-            return this.list;
-        };
-        this.remove = (index) => {
-            if (index >= 0 && index < this.size) {
-                this.list.splice(index, 1);
-                this.size--;
-                return this.list;
-            }
-
-        },
-            this.get = (index) => {
-                if (index >= 0 && index < this.size) {
-                    return obj.list[index];
-                }
-
-            };
-
-        this.getSize = () => {
-            return this.list.length
-        };
-
-
-    })()
-    return obj;
-}
-
+// option 1
 // function createSortedList() {
-//     const obj = new (function() {
+//     const obj = new (function () {
 //         this.list = [];
-//         add(element) {
-//             obj.list.unshift(element);
-//             obj.list.sort((a, b) => a - b);
+//         this.size = 0;
+//         this.add = (element) => {
+
+//             this.list.unshift(element);
+//             this.list.sort((a, b) => a - b);
+//             this.size++;
+//             return this.list;
+//         };
+//         this.remove = (index) => {
+//             if (index >= 0 && index < this.size) {
+//                 this.list.splice(index, 1);
+//                 this.size--;
+//                 return this.list;
+//             }
+
 //         },
-//         remove(index) {
-//             obj.list.splice(index, 1);
-//         },
-//         get(index) {
-//             return obj.list[index];
-//         },
+//             this.get = (index) => {
+//                 if (index >= 0 && index < this.size) {
+//                     return obj.list[index];
+//                 }
+
+//             };
+
+//         this.getSize = () => {
+//             return this.list.length
+//         };
 
 
-//         getSize() {
-//             return obj.list.length;
-//         },
-//         size: getSize(),
-//     }) ()
+//     })()
 //     return obj;
 // }
+
+// option 2
+function createSortedList() {
+    const obj = {
+        list: [],
+        size: 0,
+        add(element) {
+            obj.list.unshift(element);
+            obj.list.sort((a, b) => a - b);
+            obj.size++;
+        },
+        remove(index) {
+            if (index >= 0 && index < obj.size) {
+                obj.list.splice(index, 1);
+                obj.size--;
+            }
+        },
+
+        get(index) {
+            if (index >= 0 && index < obj.size) {
+                return obj.list[index];
+            }
+        },
+    }
+    return obj;
+}
 
 let list = createSortedList();
 list.add(5);
