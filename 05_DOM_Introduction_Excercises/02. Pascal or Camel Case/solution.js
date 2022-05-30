@@ -12,13 +12,14 @@ function solve() {
     result += words.shift().toLowerCase();
     const restOfWords = words.map(w => capitalizeFirstLetter(w));
     result += restOfWords.join('');
-  } else if (namingConvention == 'Pascal Case') {
-    const restOfWords = words.map(w => capitalizeFirstLetter(w));
-    result += restOfWords.join('');
-  } else {
-    result = 'Error!'
+  } 
+  else if (namingConvention == 'Pascal Case') {
+    const allWords = words.map(w => capitalizeFirstLetter(w));
+    result += allWords.join('');
+  } 
+  else {
+    result = 'Error!';
   }
 
   document.getElementById('result').textContent = result;
-
 }
