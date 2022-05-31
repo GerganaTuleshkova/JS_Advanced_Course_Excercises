@@ -10,6 +10,8 @@ function solve() {
       const searchedText = document.getElementById('searchField').value;
       
       for (element of document.querySelectorAll('tr > td')) {
+
+         
          if (element.textContent.includes(searchedText)) {
             element.parentElement.className = 'select';
             document.getElementById('searchField').value = ''
