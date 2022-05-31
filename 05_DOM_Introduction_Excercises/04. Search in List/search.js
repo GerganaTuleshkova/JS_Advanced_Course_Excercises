@@ -5,7 +5,9 @@ function search() {
          city.style.textDecoration = "none";
    }
 
-   let cities = Array.from(document.getElementsByTagName('li')).map(c => c.textContent);
+   // let cities = Array.from(document.getElementsByTagName('li')).map(c => c.textContent);
+   let cities = Array.from(document.querySelectorAll('ul#towns li')).map(c => c.textContent);
+
    const searchedText = document.getElementById('searchText').value;
 
    // make a list of city names that contain the searched word
