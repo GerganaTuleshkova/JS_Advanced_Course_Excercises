@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="title">DOM introduction</h1>
+    <ul>
+        <li class="row">DOM properties example</li>
+        <li class="row">DOM methods examples <button onclick='alert("Button clicked")'>Click me</button></li>
+    </ul>
+    <input>
+    <script>
+        function edit(element, match, replacer) {
+            let elementText = element.textContent;
+            let newText = elementText.split(match).join(replacer);
+            element.textContent = newText;
+
+        }
+    </script>
+</body>
+
+</html>
