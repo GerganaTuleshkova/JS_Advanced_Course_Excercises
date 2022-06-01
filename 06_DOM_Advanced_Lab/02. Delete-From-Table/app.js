@@ -13,9 +13,10 @@ function deleteByEmail() {
     inputElement.value = '';
 
     let resultElement = document.getElementById('result');
-    if (matchFound) {
-        resultElement.textContent = 'Deleted.';
-    } else {
-        resultElement.textContent = 'Not found.';
-    }
+    resultElement.textContent = matchFound ? 'Deleted.' : 'Not found.';
+    // if (matchFound) {
+    //     resultElement.textContent = 'Deleted.';
+    // } else {
+    //     resultElement.textContent = 'Not found.';
+    // }
 }
