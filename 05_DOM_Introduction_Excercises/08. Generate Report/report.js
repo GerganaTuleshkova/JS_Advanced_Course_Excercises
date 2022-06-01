@@ -47,5 +47,4 @@ function generateReport() {
     if (checkedColumnsIndices.length > 0) {
         document.getElementById('output').textContent = result;
     }
-
 }
