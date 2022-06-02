@@ -1,60 +1,33 @@
 function attachEventsListeners() {
-
     let daysInputElement = document.getElementById('days');
     let hoursInputElement = document.getElementById('hours');
     let minutesInputElement = document.getElementById('minutes');
     let secondsInputElement = document.getElementById('seconds');
 
-    daysInputElement.value = 0
-    hoursInputElement.value = 0;
-    minutesInputElement.value = 0;
-    secondsInputElement.value = 0;
-
-    let daysForConversion = 0;
-
     let buttonElements = Array.from(document.querySelectorAll('input[type="button"]'))
-    .forEach( e => e.addEventListener('click', onClick));
+        .forEach(e => e.addEventListener('click', onClick));
 
-    let inputElements = Array.from(document.querySelectorAll('input[type="text"]'))
-
-    // console.log(buttonElements.length)
-
-    // daysInputElement.nextElementSibling.addEventListener('click', daysToOthers);
-    // hoursInputElement.nextElementSibling.addEventListener('click', hoursToOthers)
-    // minutesInputElement.nextElementSibling.addEventListener('click', minutesToOthers)
-    // secondsInputElement.nextElementSibling.addEventListener('click', secondsToOthers)
-
-    // function daysToOthers(event) {
-    //     let days = Number(daysInputElement.value);
-    //     let hours = days * 24;
-    //     let minutes = days * 24 * 60;
-    //     let seconds = days * 24 * 60 * 60;
-
-    //     hoursInputElement.value = hours;
-    //     minutesInputElement.value = minutes;
-    //     secondsInputElement.value = seconds
-    // }
-
-    // function hoursToOthers(event) {
-    //     let hours = Number(hoursInputElement.value);
-    //     let days = hours / 24;
-    //     let minutes = days * 24 * 60;
-    //     let seconds = days * 24 * 60 * 60;
-
-    //     daysInputElement.value = days;
-    //     minutesInputElement.value = minutes;
-    //     secondsInputElement.value = seconds
-    // }
+    let mapper = {
+        days: 1,
+        hours: 24,
+        minutes: 1440,
+        seconds: 86400,
+    }
 
     function onClick(event) {
-        //find which input was changed
-        for (let el of inputElements) {
-            let elValue = Number(el.value)
-            if (elValue != 0 ) {
-                
-            }
-        }
+        // get the enterred value
+        let inputElement = event.target.parentElement.querySelector('input[type="text"]');
+        let type = inputElement.id;
+        let valueEnterred = inputElement.value;
 
+        let days = valueEnterred / mapper[type];
+        let hours = days * mapper.hours;
+        let minutes = days * mapper.minutes;
+        let seconds = days * mapper.seconds;
 
+        daysInputElement.value = days;
+        hoursInputElement.value = hours;
+        minutesInputElement.value = minutes;
+        secondsInputElement.value = seconds;
     }
 }
