@@ -45,7 +45,7 @@ function solve() {
   }
 
   function onBuyClick() {
-    let itemsElements = document.querySelector('tbody').children;
+    let itemsElements = Array.from(document.querySelector('tbody').children);
 
     let itemsPurchased = []
     let totalPrice = 0;
