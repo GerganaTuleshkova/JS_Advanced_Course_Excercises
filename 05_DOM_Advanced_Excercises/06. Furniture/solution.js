@@ -71,8 +71,5 @@ function solve() {
     resultText += `\nAverage decoration factor: ${totalFactor/ itemsCount}`
 
     document.querySelectorAll('#exercise textarea')[1].value = resultText;
-
   }
-
-
 }
