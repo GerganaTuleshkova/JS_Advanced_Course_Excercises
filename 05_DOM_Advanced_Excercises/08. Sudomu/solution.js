@@ -1,38 +1,38 @@
 function solve() {
-    let buttons = document.querySelectorAll('button');
+    let buttons = Array.from(document.querySelectorAll('button'));
     let checkButtonElement = buttons[0];
-    let matrix = []
+    let clearButtonElement = buttons[1];
+    let table = document.querySelector('table');
+    let outputElement = document.getElementById("check").querySelector('p');
 
     checkButtonElement.addEventListener('click', onCheckClick);
-
-    let rows = Array.from(document.querySelectorAll('tbody tr'));
-
-    for (let rowEl of rows) {
-        let td = Array.from(rowEl.querySelectorAll('td'))
-        let matrixRow = td.map(td => Number(td.querySelector('input').value))
-        matrix.push(matrixRow)
-    }
+    clearButtonElement.addEventListener('click', onClearClick);
 
     function onCheckClick(event) {
+        let matrix = [];
+        let rows = Array.from(document.querySelectorAll('tbody tr'));
+
+        for (let rowEl of rows) {
+            let td = Array.from(rowEl.querySelectorAll('td'));
+            let matrixRow = td.map(td => Number(td.querySelector('input').value));
+            matrix.push(matrixRow)
+        }
         let outputText = '';
-        let outputElement = document.getElementById("check").querySelector('p')
-        let table = document.querySelector('table')
-        console.log(table)
-        console.log(outputElement)
+
         if (checkResult(matrix)) {
             outputText = 'You solve it! Congratulations!';
             outputElement.style.color = 'green';
             table.style.borderColor = 'green';
-            table.style.borderStyle = 'solid';
-            table.style.borderWidth  = '2px';
-            
+
         } else {
             outputText = 'NOP! You are not done yet...';
-            outputElement.style.color = 'red'
+            outputElement.style.color = 'red';
+            table.style.borderColor = 'red';
         }
 
+        table.style.borderStyle = 'solid';
+        table.style.borderWidth = '2px';
         outputElement.textContent = outputText;
-        console.log(checkResult(matrix))
     }
 
     function checkResult(matrix) {
@@ -64,8 +64,13 @@ function solve() {
                 break;
             }
         }
-
         return isSolved;
     }
+
+    function onClearClick() {
+        Array.from(document.querySelectorAll('input'))
+            .forEach(i => i.value = '');
+        table.style.border = 'none';
+        outputElement.textContent = '';
+    }
 }
-    
