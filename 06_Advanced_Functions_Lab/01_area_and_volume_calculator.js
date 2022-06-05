@@ -11,7 +11,7 @@ function solve(areaFunc, volFunc, string) {
             }
         )
     }
-    return result
+    return result;
 }
 
 function area() {
