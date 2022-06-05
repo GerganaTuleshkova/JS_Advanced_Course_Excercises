@@ -6,13 +6,8 @@ function sortArray(array, sortingBy) {
         desc: () => arr.sort((a, b) => b - a),
     }
 
-    sortingMapping[sortingBy]()
-    // function sort() {
-    //     sortingMapping[sortingBy]
-    // }
-
-    // sort()
-    console.log(arr)
+    sortingMapping[sortingBy]();
+    return arr;
 }
 
 sortArray([14, 7, 17, 6, 8], 'desc')
