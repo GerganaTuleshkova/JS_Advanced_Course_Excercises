@@ -3,14 +3,14 @@ function add(n) {
 
     function inner(number) {
         sum += number;
-        console.log(sum, inner.toString())
+        // console.log(sum, inner.toString())
         return inner;
     }
 
-    // inner.toString = () => {
-    //     console.log(sum)
-    //     return sum;
-    // }
+    inner.toString = () => {
+        // console.log(sum)
+        return sum;
+    }
 
     return inner;
 }
