@@ -19,6 +19,10 @@ function solve() {
             createTaskElement(taskName, description, date);
         }
         event.preventDefault();
+
+        inputElement.querySelector('#task').value = '';
+        inputElement.querySelector('#description').value = '';
+        inputElement.querySelector('#date').value = '';
     }
 
     function createTaskElement(name, description, dueDate) {
@@ -49,6 +53,9 @@ function solve() {
         articleTask.appendChild(divButtons);
 
         openElement.children[1].appendChild(articleTask);
+
+        
+
     }
 
     function onDeleteClick(event) {
