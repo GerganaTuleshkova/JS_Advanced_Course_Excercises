@@ -1,9 +1,11 @@
-const { assert } = require('chai');
+const { assert, expect } = require('chai');
 const { isSymmetric } = require('./symmetry');
 
 describe('Test isSymmetric function', () => {
+    
     it('works with array', () => {
-        assert.isTrue(isSymmetric([1, 2, 2, 1]), 'works with symetric array');
+        // assert.isTrue(isSymmetric([1, 2, 2, 1]), 'works with symetric array');
+        expect(isSymmetric([1, 2, 2, 1]), 'works with symetric array').to.be.true;
     });
     it('works with array that is not symmetric', () => {
         assert.isFalse(isSymmetric([1, 2, 3, 4]), 'works with asymtric array')
@@ -22,4 +24,4 @@ describe('Test isSymmetric function', () => {
         assert.isFalse(isSymmetric([1, 2, '2', '1']), 'works with asymtric array');
 
     })
-})
+});
