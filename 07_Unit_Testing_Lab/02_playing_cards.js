@@ -8,8 +8,7 @@ function cardFactory(faceGiven, suitGiven) {
     }
 
     if (!faces.includes(faceGiven) || (!suits[suitGiven])) {
-        throw new Error;
-        return;
+        throw new Error('Invalid face or suit!');
     }
 
     let card = {
