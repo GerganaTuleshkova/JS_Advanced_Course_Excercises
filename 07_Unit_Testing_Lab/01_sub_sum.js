@@ -16,7 +16,7 @@ function sum(arr, startIndex, endIndex) {
         result += Number(arr[i]);
     }
 
-    return result
+    return result;
 }
 
-console.log(sum([10, 'twenty', 30, 40], 0, 2))
+console.log(sum([10, 'twenty', 30, 40], 0, 2));
