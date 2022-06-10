@@ -11,7 +11,7 @@ function validateRequest(obj) {
     }
 
     function isValidURI(uri) {
-        let regex = /^(\.?[a-zA-Z0-9]+(\.*[a-zA-Z0-9]+)*)+$/g;
+        let regex = /^[[a-zA-Z0-9.]+$/;
         if (!regex.test(uri) && uri != '*' || uri == undefined) {
             throw new Error('Invalid URI');
         }
@@ -50,7 +50,4 @@ console.log(validateRequest(
         version: 'HTTP/1.1',
         message: ''
     }
-
-
-
 ));
