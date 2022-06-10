@@ -33,6 +33,7 @@ describe('Test createCalculator Function', () => {
         let calc = createCalculator();
         calc.add(3);
         assert.equal(calc.get(), 3);
+        // expect(calc.get()).to.equal(3)
     });
 
     it('returns correct value with several add', () => {
@@ -57,7 +58,8 @@ describe('Test createCalculator Function', () => {
     it('returns NaN with add with string word', () => {
         let calc = createCalculator();
         calc.add('hello');
-        assert(isNaN(calc.get()))
+        // assert(isNaN(calc.get()))
+        expect(calc.get()).to.be.NaN;
     });
 
     it('returns NaN with add with no argument', () => {
@@ -82,6 +84,12 @@ describe('Test createCalculator Function', () => {
     it('returns correct value with subtract with negative value', () => {
         let calc = createCalculator();
         calc.subtract(-6);
+        assert.equal(calc.get(), 6)
+    });
+
+    it('returns correct value with subtract with negative number as string', () => {
+        let calc = createCalculator();
+        calc.subtract('-6');
         assert.equal(calc.get(), 6)
     });
 
@@ -146,5 +154,28 @@ describe('Test createCalculator Function', () => {
         let calc = createCalculator();
         assert.equal(calc.get(), 0);
     });
+
+    // it ('check whether it returns properties are functions', () => {
+    //     expect(typeof createCalculator().add).to.equal('function');
+    //     expect(typeof createCalculator().subtract).to.equal('function');
+    //     expect(typeof createCalculator().get).to.equal('function');
+    // });
+
+    // it ('value cant be changed', () => {
+    //     let calc = createCalculator();
+    //     expect(calc.value += 4).to.be.NaN;
+    // });
+
+    // it ('check if add and subtract calsulate properly', () => {
+    //     let calc = createCalculator();
+    //     calc.add('5');
+    //     expect(calc.get()).to.equal(5);
+    // });
+
+    // it ('check if add and subtract get only numbers', () => {
+    //     let calc = createCalculator();
+    //     calc.add('g');
+    //     expect(calc.get()).to.be.NaN;
+    // });
 }
 )
