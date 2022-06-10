@@ -32,10 +32,6 @@ describe('Test lookupChar Function', () => {
 
     it('returns undefined with valid string and floating number as arguments', () => {
         assert.equal(lookupChar('string', 2.2), undefined);
-        expect(lookupChar('string', 2.2)).to.equal(undefined)
+        expect(lookupChar('string', 2.2)).to.equal(undefined);
     });
-
-
-
-
-})
+});
