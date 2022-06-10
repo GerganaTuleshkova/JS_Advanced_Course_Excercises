@@ -47,6 +47,7 @@ describe('Test mathEnforcer object', () => {
 
         it('returns correct result with negative float number', () => {
             expect(mathEnforcer.subtractTen(-2.2).toFixed(2)).to.equal((-2.2 - 10).toFixed(2));
+            expect(mathEnforcer.subtractTen(-2.2)).to.closeTo(12.2, 0.01);
         });
 
         it('returns undefined with valid string', () => {
