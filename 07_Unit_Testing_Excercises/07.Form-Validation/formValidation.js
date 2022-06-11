@@ -2,7 +2,7 @@ function validate() {
     let username = document.getElementById('username');
     let email = document.getElementById('email');
     let password = document.getElementById('password');
-    let confirmPassowrd = document.getElementById('confirm-password');
+    let confirmPassword = document.getElementById('confirm-password');
     let company = document.getElementById('company');
     let companyInfo = document.getElementById('companyInfo');
     let companyNumber = document.getElementById('companyNumber');
@@ -17,53 +17,42 @@ function validate() {
     }
 
     function onSubmitClick(event) {
-
-
-
-        
+        event.preventDefault();
+        let invalidFields = [];
         let allValid = true;
 
         let regexUsername = /^[a-zA-Z0-9]{3,20}$/g
         if (!regexUsername.test(username.value)) {
-            // console.log()
-            styleIncorrect(username);
-            allValid = false;
+            invalidFields.push(username);
+            // styleIncorrect(username);
+            // allValid = false;
         }
 
-        let regexPassord = /^\w{5,15}$/g;
-        if (!regexPassord.test(password.value)) {
-            styleIncorrect(password);
-            allValid = false;
+        let regexPassword = /^\w{5,15}$/;
+        if (!regexPassword.test(password.value) || confirmPassword.value != password.value) {
+            invalidFields.push(password);
+            invalidFields.push(confirmPassword);
         }
 
-        if (confirmPassowrd.value != password.value) {
-            styleIncorrect(confirmPassowrd);
-            styleIncorrect(password);
-            allValid = false;
-        }
-
-        let regexEmail = /^\w+@\w+\.\w+/gm;
+        // let regexEmail = /(.*)@(.*){1,}\.(.*){1,}/;
+        let regexEmail = /(.*)@(.*)+\.(.*)+/
         if (!regexEmail.test(email.value)) {
-            styleIncorrect(email);
-            allValid = false;
+            invalidFields.push(email);
         }
 
         if (company.checked) {
             companyInfo.style.display = 'block';
             let regexCompanyNumber = /^[1-9][0-9]{3}$/gm;
             if (!regexCompanyNumber.test(companyNumber.value)) {
-                console.log(companyNumber)
-                styleIncorrect(companyNumber);
-                allValid = false;
+                invalidFields.push(companyNumber);
             }
         }
-        
-        if (allValid) {
+
+        invalidFields.forEach(el => styleIncorrect(el))
+
+        if (invalidFields.length == 0) {
             validDiv.style.display = 'block'
         }
-
-
-        event.preventDefault()
     }
 
     function onCompanyChanged(event) {

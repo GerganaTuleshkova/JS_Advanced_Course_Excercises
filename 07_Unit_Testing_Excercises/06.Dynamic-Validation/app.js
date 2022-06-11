@@ -5,7 +5,7 @@ function validate() {
     inputElement.addEventListener('change', onChange);
 
     function onChange(event) {
-        let regex = /[a-z]+@[a-z]+.[a-z]+/g;
+        let regex = /[a-z]+@[a-z]+\.[a-z]+/g;
         let isValid = regex.exec(inputElement.value);
         if (!isValid) {
             inputElement.className = 'error';
