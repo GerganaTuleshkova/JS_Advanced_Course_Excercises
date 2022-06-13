@@ -1,7 +1,7 @@
 class List {
     constructor() {
         this.numbers = [];
-        // this.size = undefined;
+        // this.size = this.getSize();
     }
 
     add(element) {
@@ -21,17 +21,26 @@ class List {
         }
     }
 
-    get size() {
-        return this.numbers.length;
-    }
+    // get size() {
+    //     return this.numbers.length;
+    // }
+
+    // getSize() {
+    //     return this.numbers.length;
+    // }
 }
 
 let list = new List();
 list.add(5);
 list.add(6);
 list.add(7);
+console.log(list.numbers);
+console.log(list.size);
+
 console.log(list.get(1));
 list.remove(1);
+console.log(list.numbers);
+
 console.log(list.get(1));
 console.log(list.size);
 console.log(list.hasOwnProperty('size'))
