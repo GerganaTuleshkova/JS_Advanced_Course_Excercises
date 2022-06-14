@@ -1,18 +1,24 @@
 class List {
     constructor() {
         this.numbers = [];
-        this.size;
+        this.size = 0;
     }
 
     add(element) {
-        this.numbers.push(element);
-        this.numbers.sort((a, b) => a - b);
+        if (typeof element == 'number') {
+            this.numbers.push(element);
+            this.numbers.sort((a, b) => a - b);
+            this.size++;
+        }
+        return this;
     }
 
     remove(index) {
         if (index >= 0 && index < this.size) {
             this.numbers.splice(index, 1);
+            this.size--;
         }
+        return this;
     }
 
     get(index) {
@@ -20,18 +26,6 @@ class List {
             return this.numbers[index];
         }
     }
-
-    get size() {
-        return this.numbers.length;
-    }
-
-    // set size(number) {
-    //    this._size = this.numbers.length
-    // }
-
-    // getSize() {
-    //     return this.numbers.length;
-    // }
 }
 
 let list = new List();
