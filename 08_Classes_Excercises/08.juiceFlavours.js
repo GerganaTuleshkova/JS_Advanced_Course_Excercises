@@ -11,7 +11,7 @@ function makeJuices(arr) {
 
         obj[kind] += quantity
 
-        if (obj[kind] > 1000) {
+        if (obj[kind] >= 1000) {
             if (!juices.has(kind)) {
                 juices.set(kind, 0);
             }
