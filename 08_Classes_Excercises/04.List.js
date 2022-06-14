@@ -1,7 +1,7 @@
 class List {
     constructor() {
         this.numbers = [];
-        // this.size = this.getSize();
+        this.size;
     }
 
     add(element) {
@@ -21,8 +21,12 @@ class List {
         }
     }
 
-    // get size() {
-    //     return this.numbers.length;
+    get size() {
+        return this.numbers.length;
+    }
+
+    // set size(number) {
+    //    this._size = this.numbers.length
     // }
 
     // getSize() {
