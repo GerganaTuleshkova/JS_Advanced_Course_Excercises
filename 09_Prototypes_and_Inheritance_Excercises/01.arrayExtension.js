@@ -1,17 +1,18 @@
 (function solve() {
-    Array.prototype.last = function() {
+    Array.prototype.last = function () {
         return this[this.length - 1];
     };
-    
-    Array.prototype.skip = function(n) {
+
+    Array.prototype.skip = function (n) {
         return this.slice(n);
     }
 
-    Array.prototype.take = function(n) {
+    Array.prototype.take = function (n) {
         return this.slice(0, n);
     }
 
-    Array.prototype.sum = function() {
+    Array.prototype.sum = function () {
+        // return this.reduce((a, b) => a + b, 0)
         let sumOfElements = 0;
         for (let el of this) {
             sumOfElements += el
@@ -19,11 +20,11 @@
         return sumOfElements;
     }
 
-    Array.prototype.average = function() {
+    Array.prototype.average = function () {
         return (this.sum() / this.length);
     }
 
-}) ();
+})();
 
 let myArr = [1, 2, 366]
 console.log(myArr.last())
