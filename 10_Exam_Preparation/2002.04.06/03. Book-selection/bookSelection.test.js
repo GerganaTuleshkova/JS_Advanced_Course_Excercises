@@ -16,13 +16,13 @@ describe('Test bookSelection object', () => {
         it('returns "suitable..." string with age=13 and genre=Horror', () => {
             expect(bookSelection.isGenreSuitable('Horror', 13)).to.equal('Those books are suitable');
         });
-        it('returns "suitable..." string with age=13', () => {
+        it('returns "suitable..." string with age=13 and genre=drama', () => {
             expect(bookSelection.isGenreSuitable('drama', 13)).to.equal('Those books are suitable');
         });
         it('returns "suitable..." string with age=12 and genre=Comedy', () => {
             expect(bookSelection.isGenreSuitable('Comedy', 12)).to.equal('Those books are suitable');
         });
-        it('return "not suitable..." string with age=12 and genre=Horror', () => {
+        it('returns "not suitable..." string with age=12 and genre=Horror', () => {
             let age = 12;
             let genre = 'Horror'
             expect(bookSelection.isGenreSuitable(genre, age)).to.equal(`Books with ${genre} genre are not suitable for kids at ${age} age`);
@@ -32,15 +32,15 @@ describe('Test bookSelection object', () => {
             let genre = 'Thriller'
             expect(bookSelection.isGenreSuitable(genre, age)).to.equal(`Books with ${genre} genre are not suitable for kids at ${age} age`);
         });
-        it('return "suitable..." string with age=11 and genre=Comedy', () => {
+        it('returns "suitable..." string with age=11 and genre=Comedy', () => {
             expect(bookSelection.isGenreSuitable('Comedy', 11)).to.equal('Those books are suitable');
         });
-        it('return "not suitable..." string with age=11 and genre=Horror', () => {
+        it('returns "not suitable..." string with age=11 and genre=Horror', () => {
             let age = 11;
             let genre = 'Horror'
             expect(bookSelection.isGenreSuitable(genre, age)).to.equal(`Books with ${genre} genre are not suitable for kids at ${age} age`);
         });
-        it('return "not suitable..." string with age=11 and genre=Thriller', () => {
+        it('returns "not suitable..." string with age=11 and genre=Thriller', () => {
             let age = 11;
             let genre = 'Thriller'
             expect(bookSelection.isGenreSuitable(genre, age)).to.equal(`Books with ${genre} genre are not suitable for kids at ${age} age`);
