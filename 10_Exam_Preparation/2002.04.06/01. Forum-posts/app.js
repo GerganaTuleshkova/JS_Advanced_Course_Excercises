@@ -9,9 +9,9 @@ function solve() {
   let postsForReviewUl = document.getElementById('review-list');
   let clearButton = document.getElementById('clear-btn');
 
-  publishButton.addEventListener('click', onPublishClick);
+  publishButton.addEventListener('click', publishPost);
 
-  function onPublishClick(event) {
+  function publishPost(event) {
     event.preventDefault()
 
     if (title.value && category.value && content.value) {
