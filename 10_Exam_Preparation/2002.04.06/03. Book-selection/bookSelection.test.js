@@ -3,44 +3,44 @@ const { bookSelection } = require('./bookSelection');
 
 describe('Test bookSelection object', () => {
     it('creates object', () => {
-        expect(typeof bookSelection).to.be.equal('object')
+        expect(typeof bookSelection).to.be.equal('object');
     });
 
     describe('isGenreSuitable test', () => {
-        it('return "allowed" string with age=13', () => {
+        it('return "suitable..." string with age=13', () => {
             expect(bookSelection.isGenreSuitable('drama', 13)).to.equal('Those books are suitable');
         });
-        it('return "allowed" string with age=13 and genre=Triller', () => {
+        it('returns "suitable..." string with age=13 and genre=Triller', () => {
             expect(bookSelection.isGenreSuitable('Thriller', 13)).to.equal('Those books are suitable');
         });
-        it('return "allowed" string with age=13 and genre=Horror', () => {
+        it('returns "suitable..." string with age=13 and genre=Horror', () => {
             expect(bookSelection.isGenreSuitable('Horror', 13)).to.equal('Those books are suitable');
         });
-        it('return "allowed" string with age=13', () => {
+        it('returns "suitable..." string with age=13', () => {
             expect(bookSelection.isGenreSuitable('drama', 13)).to.equal('Those books are suitable');
         });
-        it('return "allowed" string with age=12 and genre=Comedy', () => {
+        it('returns "suitable..." string with age=12 and genre=Comedy', () => {
             expect(bookSelection.isGenreSuitable('Comedy', 12)).to.equal('Those books are suitable');
         });
-        it('return "not suitable" string with age=12 and genre=Horror', () => {
+        it('return "not suitable..." string with age=12 and genre=Horror', () => {
             let age = 12;
             let genre = 'Horror'
             expect(bookSelection.isGenreSuitable(genre, age)).to.equal(`Books with ${genre} genre are not suitable for kids at ${age} age`);
         });
-        it('return "not suitable" string with age=12 and genre=Thriller', () => {
+        it('returns "not suitable..." string with age=12 and genre=Thriller', () => {
             let age = 12;
             let genre = 'Thriller'
             expect(bookSelection.isGenreSuitable(genre, age)).to.equal(`Books with ${genre} genre are not suitable for kids at ${age} age`);
         });
-        it('return "allowed" string with age=11 and genre=Comedy', () => {
+        it('return "suitable..." string with age=11 and genre=Comedy', () => {
             expect(bookSelection.isGenreSuitable('Comedy', 11)).to.equal('Those books are suitable');
         });
-        it('return "not suitable" string with age=11 and genre=Horror', () => {
+        it('return "not suitable..." string with age=11 and genre=Horror', () => {
             let age = 11;
             let genre = 'Horror'
             expect(bookSelection.isGenreSuitable(genre, age)).to.equal(`Books with ${genre} genre are not suitable for kids at ${age} age`);
         });
-        it('return "not suitable" string with age=11 and genre=Thriller', () => {
+        it('return "not suitable..." string with age=11 and genre=Thriller', () => {
             let age = 11;
             let genre = 'Thriller'
             expect(bookSelection.isGenreSuitable(genre, age)).to.equal(`Books with ${genre} genre are not suitable for kids at ${age} age`);
@@ -97,7 +97,7 @@ describe('Test bookSelection object', () => {
         it('returns correct array with valid array and valid wantedGenre', () => {
             let books = [{ title: "The Da Vinci Code", genre: "Thriller" }];
             let wantedGenre = 'Thriller';
-            let expectedResult = ['The Da Vinci Code']
+            let expectedResult = ['The Da Vinci Code'];
             expect(bookSelection.suitableTitles(books, wantedGenre)).to.eql(expectedResult);
         });
 
@@ -108,7 +108,7 @@ describe('Test bookSelection object', () => {
             expect(bookSelection.suitableTitles(books, wantedGenre)).to.eql(expectedResult);
         });
 
-        it('returns correct empty array with valid array and valid wantedGenre', () => {
+        it('returns correct array (2 elements) with valid array and valid wantedGenre', () => {
             let books = [{ title: "The Da Vinci Code", genre: "Thriller" },
             { title: "Second", genre: "Thriller" }];
             let wantedGenre = 'Thriller';
@@ -118,11 +118,10 @@ describe('Test bookSelection object', () => {
                     expectedResult.push(obj.title);
                 }
             });
-
             expect(bookSelection.suitableTitles(books, wantedGenre)).to.eql(expectedResult);
         });
 
-        it('returns correct empty array with valid array and valid wantedGenre', () => {
+        it('returns correct array (1 element) with valid array and valid wantedGenre', () => {
             let books = [{ title: "The Da Vinci Code", genre: "Thriller" },
             { title: "Second", genre: "Drama" }];
             let wantedGenre = 'Thriller';
@@ -132,7 +131,6 @@ describe('Test bookSelection object', () => {
                     expectedResult.push(obj.title);
                 }
             });
-
             expect(bookSelection.suitableTitles(books, wantedGenre)).to.eql(expectedResult);
         });
 
@@ -151,14 +149,12 @@ describe('Test bookSelection object', () => {
         });
 
         it('trows error with no arguments', () => {
-            
             expect(() => { bookSelection.suitableTitles() }).to.throw('Invalid input');
         });
 
         it('trows error with 1 argument', () => {
             let books = [{ title: "The Da Vinci Code", genre: "Thriller" },
             { title: "Second", genre: "Drama" }];
-            let wantedGenre = 2;
             expect(() => { bookSelection.suitableTitles(books) }).to.throw('Invalid input');
         });
     })
