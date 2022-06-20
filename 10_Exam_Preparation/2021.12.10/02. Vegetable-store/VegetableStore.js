@@ -12,7 +12,6 @@ class VegetableStore {
             quantity = Number(quantity);
             price = Number(price);
 
-
             let currentVegetable = {
                 type: vegetableName,
                 quantity,
