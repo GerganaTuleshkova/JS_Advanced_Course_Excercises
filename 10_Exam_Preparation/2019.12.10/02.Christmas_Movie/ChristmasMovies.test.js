@@ -162,18 +162,10 @@ describe('Test ChristmasMovies class', () => {
 
         it('throws error with no movies on list', () => {
             let cm = new ChristmasMovies();
-            // let movieName = 'Home Alone';
-            // let actors = ['Macaulay Culkin', 'Joe Pesci', 'Daniel Stern'];
-            // let actors2 = ['Macaulay Culkin'];
-            // let movieName2 = 'Home Alone 2';
-            // cm.buyMovie(movieName, actors)
-            // cm.buyMovie(movieName2, actors2)
-            
+                        
             let expectedResult = 'You have not watched a movie yet this year!'
 
             expect(() => cm.mostStarredActor()).to.throw(expectedResult);
         });
-
     });
-
 });
