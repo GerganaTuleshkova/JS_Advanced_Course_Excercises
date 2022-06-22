@@ -81,20 +81,21 @@ class ChristmasMovies {
 }
 
 let christmas = new ChristmasMovies();
-christmas.buyMovie('Home Alone', ['Macaulay Culkin', 'Joe Pesci', 'Daniel Stern']);
-christmas.buyMovie('Home Alone 2', ['Macaulay Culkin']);
-christmas.buyMovie('Last Christmas', ['Emilia Clarke', 'Henry Golding']);
-christmas.buyMovie('The Grinch', ['Benedict Cumberbatch', 'Pharrell Williams']);
-christmas.watchMovie('Home Alone');
-christmas.watchMovie('Home Alone');
-christmas.watchMovie('Home Alone');
-christmas.watchMovie('Home Alone 2');
-christmas.watchMovie('The Grinch');
-christmas.watchMovie('Last Christmas');
-christmas.watchMovie('Home Alone 2');
-christmas.watchMovie('Last Christmas');
-christmas.discardMovie('The Grinch');
-christmas.favouriteMovie();
-christmas.mostStarredActor();
+console.log(typeof christmas)
+// christmas.buyMovie('Home Alone', ['Macaulay Culkin', 'Joe Pesci', 'Daniel Stern']);
+// christmas.buyMovie('Home Alone 2', ['Macaulay Culkin']);
+// christmas.buyMovie('Last Christmas', ['Emilia Clarke', 'Henry Golding']);
+// christmas.buyMovie('The Grinch', ['Benedict Cumberbatch', 'Pharrell Williams']);
+// christmas.watchMovie('Home Alone');
+// christmas.watchMovie('Home Alone');
+// christmas.watchMovie('Home Alone');
+// christmas.watchMovie('Home Alone 2');
+// christmas.watchMovie('The Grinch');
+// christmas.watchMovie('Last Christmas');
+// christmas.watchMovie('Home Alone 2');
+// christmas.watchMovie('Last Christmas');
+// christmas.discardMovie('The Grinch');
+// christmas.favouriteMovie();
+// christmas.mostStarredActor();
 
-module.exports = ChristmasMovies;
+module.exports = {ChristmasMovies};
