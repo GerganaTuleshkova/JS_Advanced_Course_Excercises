@@ -72,7 +72,6 @@ class VegetableStore {
 
         foundVegetable.quantity -= quantity;
         return `Some quantity of the ${type} has been removed.`;
-
     }
 
     revision() {
