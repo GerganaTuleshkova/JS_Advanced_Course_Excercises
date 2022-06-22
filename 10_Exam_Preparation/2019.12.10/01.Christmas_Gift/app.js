@@ -2,22 +2,29 @@ function solution() {
     let [addSection, listSection, sentSection, discardedSection] = Array.from(document.querySelector('div').querySelectorAll('section'));
     let addGiftButton = addSection.querySelector('button');
     let giftNameElement = addSection.querySelector('input');
-    let listOfGifts = [];
+    // let listOfGifts = [];
 
 
     addGiftButton.addEventListener('click', addGift);
 
     function addGift(event) {
         let nameOfGift = giftNameElement.value;
-        listOfGifts.push(nameOfGift);
-        listOfGifts = listOfGifts.sort((a, b) => a.localeCompare(b));
+        // commented section does not work in Judge:
+        // listOfGifts.push(nameOfGift);
+        // listOfGifts = listOfGifts.sort((a, b) => a.localeCompare(b));
 
-        // listSection.querySelector('ul').innerHTML = ''
-        Array.from(listSection.querySelector('ul').children).forEach(child => child.remove())
+        // // listSection.querySelector('ul').innerHTML = ''
+        // Array.from(listSection.querySelector('ul').children).forEach(child => child.remove())
 
-        listOfGifts.map(gift => createGiftLi(gift, listSection.querySelector('ul')));
+        // listOfGifts.map(gift => createGiftLi(gift, listSection.querySelector('ul')));
+        createGiftLi(nameOfGift, listSection.querySelector('ul'));
 
-        giftNameElement.value = ''
+        Array.from(listSection.querySelectorAll('li'))
+            .sort((a, b) => a.textContent.localeCompare(b.textContent))
+            .forEach(x => listSection.querySelector('ul').appendChild(x));
+
+
+        giftNameElement.value = '';
     }
 
     function createGiftLi(giftName, parentElement) {
