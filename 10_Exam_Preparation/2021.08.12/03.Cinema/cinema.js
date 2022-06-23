@@ -20,7 +20,7 @@ const cinema = {
             let price = schedule[projectionType];
             return price;
         } else {
-            throw new Error('Invalid projection type.')
+            throw new Error('Invalid projection type.');
         }
 
     },
