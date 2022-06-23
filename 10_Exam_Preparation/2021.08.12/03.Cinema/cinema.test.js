@@ -28,7 +28,7 @@ describe('Test cinema object', () => {
 
         it('returns correct string with array len = 0', () => {
             let movieArr = [];
-            let expectedResult = 'There are currently no movies to show.'
+            let expectedResult = 'There are currently no movies to show.';
             expect(cinema.showMovies(movieArr)).to.equal(expectedResult);
         });
     });
@@ -79,7 +79,7 @@ describe('Test cinema object', () => {
             expect(cinema.swapSeatsInHall(firstPlace, secondPlace)).to.equal(expectedResult);
         });
 
-        it('returns correct string with equal numbers 20 & 20', () => {
+        it('returns correct string with invalid input', () => {
             let firstPlace = 20;
             let secondPlace = 20;
             let expectedResult = 'Unsuccessful change of seats in the hall.';
